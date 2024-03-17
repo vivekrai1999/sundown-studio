@@ -4,9 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
       rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css"
     />
     <link
       rel="stylesheet"
@@ -21,17 +26,27 @@
     <title>sundown-studio</title>
   </head>
   <body>
-    <div class="main">
+    <div class="main" data-scroll-container>
       <div class="page-1 section">
-        <div class="nav-bar">
-          <div class="nav-left">
-            <div class="logo">
-              <img
-                src="https://assets-global.website-files.com/64d3dd9edfb41666c35b15b7/64d3dd9edfb41666c35b15c2_Sundown%20logo.svg"
-                alt=""
-              />
+        <div class="mobile-nav">
+          <img
+            src="https://assets-global.website-files.com/64d3dd9edfb41666c35b15b7/64d3dd9edfb41666c35b15c2_Sundown%20logo.svg"
+            alt=""
+          />
+
+          <div class="mobile-nav-menu">
+            <div class="mobile-nav-menu-item">
+              <i class="ri-equal-line"></i>
+              <span>Menu</span>
             </div>
           </div>
+        </div>
+        <div class="nav-bar">
+          <img
+            src="https://assets-global.website-files.com/64d3dd9edfb41666c35b15b7/64d3dd9edfb41666c35b15c2_Sundown%20logo.svg"
+            alt=""
+          />
+
           <div class="nav-right">
             <div class="nav-menu">
               <ul class="menu">
@@ -44,10 +59,13 @@
         </div>
         <div class="hero-container">
           <div class="hero-container-content">
-            <h2 class="sub-hero-content">
-              Sundown is a multi-disciplinary studio focused on creating unique,
-              end-to-end experiences and environments.
-            </h2>
+            <div class="sub-content">
+              <h2 class="sub-hero-content">
+                Sundown is a multi-disciplinary studio focused on creating
+                unique, end-to-end experiences and environments.
+              </h2>
+            </div>
+
             <h1 class="hero-content">
               SPACES <br />
               THAT<br />
@@ -58,7 +76,7 @@
       </div>
       <div class="page-2 section">
         <div class="video-element">
-          <video autoplay muted loop src="./assets/videos/3.mp4"></video>
+          <video autoplay muted loop src="./assets/videos/1.mp4"></video>
         </div>
       </div>
       <div class="marquee-component section">
@@ -116,6 +134,10 @@
         </div>
       </div>
       <div class="page-3 section">
+        <div class="heading featured">
+          <i class="ri-checkbox-blank-circle-fill"></i>
+          <p>featured projects</p>
+        </div>
         <div class="project-video-container"></div>
         <div class="featured-project" data-index="1">
           <div class="featured-project-right">
@@ -207,7 +229,7 @@
           </div>
         </div>
       </div>
-      <div class="page-5">
+      <div class="page-5 section">
         <div class="cursor-big-round">
           <div class="arrows">
             <i class="ri-arrow-left-s-line"></i>
@@ -215,6 +237,10 @@
           </div>
         </div>
         <div class="slider">
+          <div class="heading">
+            <i class="ri-checkbox-blank-circle-fill"></i>
+            <p>WHO WE WORK WITH</p>
+          </div>
           <!-- Slider main container -->
           <div class="swiper">
             <!-- Additional required wrapper -->
@@ -338,6 +364,16 @@
           </div>
         </div>
       </div>
+      <footer>
+        <div class="footer">
+          <ul>
+            <li>Copyright © Sundown Studio</li>
+            <li>Brooklyn, NY</li>
+            <li>Instagram</li>
+            <li>LinkedIn</li>
+          </ul>
+        </div>
+      </footer>
     </div>
 
     <script src="main.js"></script>

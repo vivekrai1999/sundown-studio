@@ -81,18 +81,42 @@ document.querySelectorAll(".featured-project").forEach((element) => {
   });
 });
 
+// const scroll = new LocomotiveScroll({
+//   el: document.querySelector("[data-scroll-container]"),
+//   smooth: true,
+//   lerp: 0.1,
+// });
+
 const swiper = new Swiper(".swiper", {
   slidesPerView: 3,
   speed: 400,
   spaceBetween: 100,
+  breakpoints: {
+    // when window width is >= 320px
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 20,
+    },
+    // when window width is >= 480px
+    480: {
+      slidesPerView: 1,
+      spaceBetween: 30,
+    },
+    // when window width is >= 640px
+    750: {
+      slidesPerView: 4,
+      spaceBetween: 40,
+    },
+  },
 });
 
 document.querySelector(".swiper").addEventListener("mouseenter", (e) => {
-  console.log(e.clientX);
+  document.querySelector(".swiper").style.cursor = "none";
   document.querySelector(".cursor-big-round").style.transform = "scale(1)";
 });
 
 document.querySelector(".swiper").addEventListener("mousemove", (e) => {
+  document.querySelector(".swiper").style.cursor = "none";
   document.querySelector(".cursor-big-round").style.left = `${
     e.clientX - 50
   }px`;
@@ -100,6 +124,7 @@ document.querySelector(".swiper").addEventListener("mousemove", (e) => {
 });
 
 document.querySelector(".swiper").addEventListener("mouseleave", () => {
+  document.querySelector(".swiper").style.cursor = "";
   document.querySelector(".cursor-big-round").style.transform = "scale(0)";
 });
 
