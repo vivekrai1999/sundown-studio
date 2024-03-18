@@ -6,6 +6,7 @@ document.querySelectorAll(".featured-project").forEach((element) => {
     video.autoplay = true;
     video.loop = true;
     video.muted = true;
+    element.querySelector(".color-bg").style.transform = "translateY(0%)";
     // video.setAttribute("autoplay");
     // video.setAttribute("loop");
     // video.setAttribute("muted");
@@ -76,6 +77,7 @@ document.querySelectorAll(".featured-project").forEach((element) => {
 document.querySelectorAll(".featured-project").forEach((element) => {
   element.addEventListener("mouseleave", (e) => {
     //console.log(e.target.dataset.index);
+    element.querySelector(".color-bg").style.transform = "translateY(-120%)";
     document.querySelector(".project-video-container").style.opacity = "0";
     document.querySelector(".project-video-container").style.zIndex = "-1";
   });
@@ -130,13 +132,13 @@ document.querySelector(".swiper").addEventListener("mouseleave", () => {
 
 const services = {
   design: {
-    text: "Our team works with our clients to refine an idea and concept into an executable design. We create a final design that encompasses the brand narrative to bring stories to life and provide end-to-end design solutions from concept, design, and architectural drawings to 3D renderings.",
+    text: "Our team works with our clients to refine an idea and concept into an executable design. We create a final design that encompasses the brand narrative to bring stories to life and provide end-to-end design solutions from concept.",
     image:
       "https://assets-global.website-files.com/64d3dd9edfb41666c35b15b7/64d3dd9edfb41666c35b15e1_Project.webp",
   },
 
   project: {
-    text: "Once we have a design, our production team takes the lead in bringing it to life. We manage all stages of the project, from build specifications and technical drawings to site surveys, vendor management, and 2D & 3D production. We have an extensive network of partners to meet each unique design and project need.",
+    text: "Once we have a design, our production team takes the lead in bringing it to life. We manage all stages of the project, from build specifications and technical drawings to site surveys, vendor management, and 2D & 3D production.",
     image:
       "https://assets-global.website-files.com/64d3dd9edfb41666c35b15b7/64d3dd9edfb41666c35b15d0_Project.webp",
   },
@@ -150,6 +152,7 @@ const services = {
 
 document.querySelectorAll(".services-option .option").forEach((element) =>
   element.addEventListener("click", (e) => {
+    e.stopPropagation();
     document
       .querySelectorAll(".services-option .option")
       .forEach((elem) => elem.classList.remove("active-service"));
@@ -173,3 +176,15 @@ document.querySelectorAll(".services-option .option").forEach((element) =>
     }
   })
 );
+
+document.querySelector(".mobile-nav-menu").addEventListener("click", () => {
+  if (document.querySelector(".mobile-nav-open").classList.contains("open")) {
+    document.querySelector(".mobile-nav-open").classList.remove("open");
+    document.querySelector(".mobile-nav").style.backgroundColor = "";
+    document.querySelector(".mobile-nav img").style.opacity = "1";
+  } else {
+    document.querySelector(".mobile-nav-open").classList.add("open");
+    document.querySelector(".mobile-nav").style.backgroundColor = "#fff";
+    document.querySelector(".mobile-nav img").style.opacity = "0";
+  }
+});
