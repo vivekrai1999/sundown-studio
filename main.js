@@ -83,11 +83,11 @@ document.querySelectorAll(".featured-project").forEach((element) => {
   });
 });
 
-// const scroll = new LocomotiveScroll({
-//   el: document.querySelector("[data-scroll-container]"),
-//   smooth: true,
-//   lerp: 0.1,
-// });
+const scroll = new LocomotiveScroll({
+  el: document.querySelector("[data-scroll-container]"),
+  smooth: true,
+  lerp: 0.1,
+});
 
 const swiper = new Swiper(".swiper", {
   slidesPerView: 3,
